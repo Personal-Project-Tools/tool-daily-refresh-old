@@ -4,17 +4,18 @@
 
 <aside>
 
-🪴To refresh for check **sales-traffic | affiliate | product** accuracy daily in https://drive.google.com/drive/folders/1tGTPM213DbNASC-e3LCfjc5y-61fDQ77?usp=drive_link
+🪴To refresh for check **sales-traffic | affiliate | product** accuracy daily
+🪴To refresh for check **media** accuracy daily
+🪴To refresh for check **content** accuracy daily
 
-🪴To refresh for check **media** accuracy daily in https://drive.google.com/drive/folders/1v09SWsezqw6TU86qJaXk0SlEgOqjK6jQ?usp=drive_link
-
-🪴To refresh for check **content** accuracy daily in https://drive.google.com/drive/folders/1c53dexo74jCupzgU-D_YfQCZjI9kJGr-?usp=drive_link
-    
 🪴Tab sheet impact:
+
 1. [metric] automated_input — make sure we had product: **CHECK DATA DAILY**
 2. [metric] database
 </aside>
+
 ---
+
 <h3>i. Structure </h3>
     
     ```
@@ -55,18 +56,20 @@
 
 ---
 
-<h3>ii. Requirements</h3> 
+<h3>ii. Requirements</h3>
 
 **step 1: download tool to refresh:**
 
 ```
-git clone https://github.com/GiBa-ADA/tool_daily_refresh.git
+git clone https://github.com/Personal-Project-Tools/tool-daily-refresh-old.git
 ```
+
 --
 
 **step 2: install library:**
 
 Using powershell in terminal:
+
 ```
 cd <tool_project_in_your_local>
 
@@ -76,11 +79,12 @@ venv\Scripts\activate
 
 pip install -r requirements.txt
 ```
+
 --
 
 **step 3: enter your database credentials:**
 
-Can be follow up with below process:    (Run all in Terminal)
+Can be follow up with below process: (Run all in Terminal)
 
 ```
 cd <tool_project_in_your_local>
@@ -89,11 +93,12 @@ cp .env.example .env
 
 Copy-Item .env.example .env
 ```
+
 --
 
 **step 4: check your client db connection**
 
-Can be follow up with below process:    (Run all in Terminal)
+Can be follow up with below process: (Run all in Terminal)
 
 ```
 cd <tool_project_in_your_local>
@@ -102,15 +107,16 @@ cp db_connection.yaml.example db_connection.yaml
 
 Copy-Item db_connection.yaml.example db_connection.yaml
 ```
-After create file ``` .yaml ```, you can be copy-paste if you have some clients.
+
+After create file `.yaml`, you can be copy-paste if you have some clients.
 
 --
 
 **step 5: check your seller scope**
 
-Contact with Huy Le (SuSu) in order to receive ```config``` folder.
+Contact with Huy Le (SuSu) in order to receive `config` folder.
 
-After that, please check your client ```.csv``` file to ensure it contains all the seller IDs for this client.
+After that, please check your client `.csv` file to ensure it contains all the seller IDs for this client.
 
 ```sql
 ├───config
@@ -119,7 +125,7 @@ After that, please check your client ```.csv``` file to ensure it contains all t
 ```
 
 ---
-    
+
 <h3>iii. How to run for refresh data</h3>
 
 **For check availabel clients and spreadsheets**
@@ -144,13 +150,11 @@ python main.py --client <client_name> --metric <metric_name>
 e.g. python main.py --client shiseido --metric sales_traffic
 ```
 
-**For refresh all exist clients and metrics in db_connection** 
+**For refresh all exist clients and metrics in db_connection**
 
 ```
-python main.py 
+python main.py
 ```
 
 **Metric refresh flow:**
 sales_traffic → sales_affiliate → product → media → content
-    
- 
